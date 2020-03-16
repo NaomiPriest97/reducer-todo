@@ -27,18 +27,13 @@ const Task = () => {
        })}>
            Add Item
        </button>
-       <button
-       onClick={() => dispatch({
-           type: "CLEAR_DONE"
-       })}>
-           Clear Completed Todos
-       </button>
+       
 
        <div className="todo-list">
            <ul>
                {state.map(item => (
                    <li>
-                       <div className={`todo-item${item.completed? "done" : ""}`}
+                       <div className={`todo-item${item.completed ? "done" : ""}`}
                        onClick={() => dispatch({
                            type:"TOGGLE_COMPLETED",
                            payload: item.id
@@ -50,7 +45,13 @@ const Task = () => {
                ))}
            </ul>
        </div>
-       
+       <button
+       className="completed"
+       onClick={() => dispatch({
+           type: "CLEAR_DONE"
+       })}>
+           Clear Completed Todos
+       </button>
      
     </div>
   );
