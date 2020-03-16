@@ -33,7 +33,7 @@ const Task = () => {
            <ul>
                {state.map(item => (
                    <li>
-                       <div className={`todo-item${item.completed ? "done" : ""}`}
+                       <div className={`todo-item${item.completed ? "completed" : ""}`}
                        onClick={() => dispatch({
                            type:"TOGGLE_COMPLETED",
                            payload: item.id
